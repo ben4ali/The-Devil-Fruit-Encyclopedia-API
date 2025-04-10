@@ -2,7 +2,7 @@ package com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.controller;
 
 import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.entity.DevilFruit;
 import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.entity.DevilFruitType;
-import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.service.Implementation.DevilFruitServiceImplementation;
+import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.service.implementation.DevilFruitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.*;
 public class DevilFruitController {
 
     @Autowired
-    private DevilFruitServiceImplementation devilFruitServiceImplementation;
+    private DevilFruitServiceImpl devilFruitServiceImpl;
 
     //get all devil fruit
     @GetMapping
     public Iterable<DevilFruit> getAllDevilFruits() {
-        return devilFruitServiceImplementation.getAllDevilFruits();
+        return devilFruitServiceImpl.getAllDevilFruits();
     }
 
     //get devil fruit by id
     @GetMapping("/{id}")
     public DevilFruit getDevilFruitById(@PathVariable Long id) {
-        return devilFruitServiceImplementation.getDevilFruitById(id);
+        return devilFruitServiceImpl.getDevilFruitById(id);
     }
 
     //create fruit
@@ -36,16 +36,16 @@ public class DevilFruitController {
             @RequestParam String imageUrl) {
 
         DevilFruit devilFruit = new DevilFruit(name, type, currentHolder, pastUsers, description, imageUrl);
-        return devilFruitServiceImplementation.createDevilFruit(devilFruit);
+        return devilFruitServiceImpl.createDevilFruit(devilFruit);
     }
 
     //update fruit
     @PutMapping("/{id}")
     public DevilFruit updateDevilFruit(@PathVariable Long id, @RequestBody DevilFruit updatedDevilFruit) {
-        DevilFruit existingDevilFruit = devilFruitServiceImplementation.getDevilFruitById(id);
+        DevilFruit existingDevilFruit = devilFruitServiceImpl.getDevilFruitById(id);
         if (existingDevilFruit != null) {
             updatedDevilFruit.setId(id);
-            return devilFruitServiceImplementation.createDevilFruit(updatedDevilFruit);
+            return devilFruitServiceImpl.createDevilFruit(updatedDevilFruit);
         }
         return null;
     }
@@ -53,6 +53,6 @@ public class DevilFruitController {
     //delete fruit
     @DeleteMapping("/{id}")
     public void deleteDevilFruit(@PathVariable Long id) {
-        devilFruitServiceImplementation.deleteDevilFruit(id);
+        devilFruitServiceImpl.deleteDevilFruit(id);
     }
 }
