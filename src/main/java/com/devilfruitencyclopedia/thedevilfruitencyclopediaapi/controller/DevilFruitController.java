@@ -1,4 +1,4 @@
-package com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.controllers;
+package com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.controller;
 
 import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.entity.DevilFruit;
 import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.entity.DevilFruitType;
