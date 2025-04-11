@@ -53,6 +53,7 @@ public class DevilFruit {
     private String imageUrl;
 
     // Constructors
+
     public DevilFruit() {
     }
 
