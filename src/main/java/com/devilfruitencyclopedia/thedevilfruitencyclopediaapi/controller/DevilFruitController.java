@@ -28,14 +28,37 @@ public class DevilFruitController {
     //create fruit
     @PostMapping
     public DevilFruit createDevilFruit(
-            @RequestParam String name,
+            @RequestParam String originalName,
+            @RequestParam String romanizedName,
+            @RequestParam String englishName,
             @RequestParam DevilFruitType type,
+            @RequestParam String debutChapter,
+            @RequestParam String debutEpisode,
+            @RequestParam String debutArc,
             @RequestParam(required = false) String currentHolder,
-            @RequestParam(required = false) String pastUsers,
+            @RequestParam(required = false) String pastHolders,
             @RequestParam String description,
+            @RequestParam boolean awakeningStatus,
+            @RequestParam(required = false) String awakeningDescription,
+            @RequestParam boolean isCanon,
             @RequestParam String imageUrl) {
 
-        DevilFruit devilFruit = new DevilFruit(name, type, currentHolder, pastUsers, description, imageUrl);
+        DevilFruit devilFruit = new DevilFruit(
+                originalName,
+                romanizedName,
+                englishName,
+                type,
+                debutChapter,
+                debutEpisode,
+                debutArc,
+                currentHolder,
+                pastHolders,
+                description,
+                awakeningStatus,
+                awakeningDescription,
+                isCanon,
+                imageUrl
+        );
         return devilFruitServiceImpl.createDevilFruit(devilFruit);
     }
 
