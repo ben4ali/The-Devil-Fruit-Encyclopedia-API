@@ -9,29 +9,32 @@ public class DevilFruit {
     @Id
     private Long id;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String originalName;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String romanizedName;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String englishName;
 
+    @Column(nullable = false)
+    private String meaning;
+
     @Enumerated(EnumType.STRING)
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private DevilFruitType type;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String debutChapter;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String debutEpisode;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String debutArc;
 
-    @Column(name = "current_holder", length = 50)
+    @Column(name = "current_holder")
     private String currentHolder;
 
     @Column(name = "past_holders", columnDefinition = "TEXT")
@@ -57,10 +60,11 @@ public class DevilFruit {
     public DevilFruit() {
     }
 
-    public DevilFruit(String originalName, String romanizedName, String englishName, DevilFruitType type, String debutChapter, String debutEpisode, String debutArc, String currentHolder, String pastHolders, String description, boolean awakeningStatus, String awakeningDescription, boolean isCanon, String imageUrl) {
+    public DevilFruit(String originalName, String romanizedName, String englishName, String meaning , DevilFruitType type, String debutChapter, String debutEpisode, String debutArc, String currentHolder, String pastHolders, String description, boolean awakeningStatus, String awakeningDescription, boolean isCanon, String imageUrl) {
         this.originalName = originalName;
         this.romanizedName = romanizedName;
         this.englishName = englishName;
+        this.meaning = meaning;
         this.type = type;
         this.debutChapter = debutChapter;
         this.debutEpisode = debutEpisode;
@@ -106,6 +110,10 @@ public class DevilFruit {
     public void setEnglishName(String englishName) {
         this.englishName = englishName;
     }
+
+    public String getMeaning() { return meaning; }
+
+    public void setMeaning(String meaning) { this.meaning = meaning; }
 
     public DevilFruitType getType() {
         return type;
