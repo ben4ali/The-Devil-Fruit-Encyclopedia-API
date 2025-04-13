@@ -1,66 +1,86 @@
 package com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.entity;
 
+import com.devilfruitencyclopedia.thedevilfruitencyclopediaapi.util.PastHoldersConverter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "devil_fruits")
 public class DevilFruit {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonProperty("originalName")
     @Column(nullable = false)
     private String originalName;
 
+    @JsonProperty("romanizedName")
     @Column(nullable = false)
     private String romanizedName;
 
+    @JsonProperty("englishName")
     @Column(nullable = false)
     private String englishName;
 
+    @JsonProperty("meaning")
     @Column(nullable = false)
     private String meaning;
 
+    @JsonProperty("type")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DevilFruitType type;
 
-    @Column(nullable = false)
+    @JsonProperty("debutChapter")
     private String debutChapter;
 
-    @Column(nullable = false)
+    @JsonProperty("debutEpisode")
     private String debutEpisode;
 
-    @Column(nullable = false)
+    @JsonProperty("debutArc")
     private String debutArc;
 
+    @JsonProperty("currentHolder")
     @Column(name = "current_holder")
     private String currentHolder;
 
-    @Column(name = "past_holders", columnDefinition = "TEXT")
-    private String pastHolders;
+    @JsonProperty("pastHolders")
+    @Column(columnDefinition = "TEXT")
+    @Convert(converter = PastHoldersConverter.class)
+    private List<String> pastHolders;
 
+    @JsonProperty("description")
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @JsonProperty("awakeningStatus")
     @Column(name = "awakening_status", nullable = false)
     private boolean awakeningStatus;
 
+    @JsonProperty("awakeningDescription")
     @Column(columnDefinition = "TEXT")
     private String awakeningDescription;
 
+    @JsonProperty("isCanon")
     @Column(name = "is_canon", nullable = false)
     private boolean isCanon;
 
-    @Column(length = 255, nullable = false)
+    @JsonProperty("imageUrl")
+    @Column(length = 1024, nullable = false)
     private String imageUrl;
 
-    // Constructors
+    // Constructors, Getters, and Setters
 
     public DevilFruit() {
     }
 
-    public DevilFruit(String originalName, String romanizedName, String englishName, String meaning , DevilFruitType type, String debutChapter, String debutEpisode, String debutArc, String currentHolder, String pastHolders, String description, boolean awakeningStatus, String awakeningDescription, boolean isCanon, String imageUrl) {
+    public DevilFruit(String originalName, String romanizedName, String englishName, String meaning, DevilFruitType type,
+                      String debutChapter, String debutEpisode, String debutArc, String currentHolder, List<String> pastHolders,
+                      String description, boolean awakeningStatus, String awakeningDescription, boolean isCanon, String imageUrl) {
         this.originalName = originalName;
         this.romanizedName = romanizedName;
         this.englishName = englishName;
@@ -78,7 +98,6 @@ public class DevilFruit {
         this.imageUrl = imageUrl;
     }
 
-    //Getters and Setters
     public Long getId() {
         return id;
     }
@@ -111,9 +130,13 @@ public class DevilFruit {
         this.englishName = englishName;
     }
 
-    public String getMeaning() { return meaning; }
+    public String getMeaning() {
+        return meaning;
+    }
 
-    public void setMeaning(String meaning) { this.meaning = meaning; }
+    public void setMeaning(String meaning) {
+        this.meaning = meaning;
+    }
 
     public DevilFruitType getType() {
         return type;
@@ -155,11 +178,11 @@ public class DevilFruit {
         this.currentHolder = currentHolder;
     }
 
-    public String getPastHolders() {
+    public List<String> getPastHolders() {
         return pastHolders;
     }
 
-    public void setPastHolders(String pastHolders) {
+    public void setPastHolders(List<String> pastHolders) {
         this.pastHolders = pastHolders;
     }
 
@@ -203,7 +226,6 @@ public class DevilFruit {
         this.imageUrl = imageUrl;
     }
 
-    // toString
     @Override
     public String toString() {
         return "DevilFruit{" +
@@ -216,7 +238,7 @@ public class DevilFruit {
                 ", debutEpisode='" + debutEpisode + '\'' +
                 ", debutArc='" + debutArc + '\'' +
                 ", currentHolder='" + currentHolder + '\'' +
-                ", pastHolders='" + pastHolders + '\'' +
+                ", pastHolders=" + pastHolders +
                 ", description='" + description + '\'' +
                 ", awakeningStatus=" + awakeningStatus +
                 ", awakeningDescription='" + awakeningDescription + '\'' +
