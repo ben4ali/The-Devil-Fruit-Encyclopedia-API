@@ -171,6 +171,20 @@ Use the `Seed.json` in postman to seed the db with the premade devil fruits.
 I also created a client-side React application that interacts with this API to display Devil Fruit information with a special style. You can check it out here: [The Devil Fruit Encyclopedia Client](https://github.com/ben4ali/The-Devil-Fruit-Encyclopedia-Client).
 
 
-## License
+## Software License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Image License
+
+All artwork and images in this repository (e.g., pixel art, Devil Fruit icons) are licensed under the **CC BY-NC-ND 4.0 License** (Attribution-NonCommercial-NoDerivatives).
+
+This means:
+
+- ✅ You **can** share and use the images **for personal or educational purposes**.
+- ❌ You **cannot** modify, remix, or transform the images.
+- ❌ You **cannot** use them for commercial purposes (e.g., sell them, use them in commercial games, merch, or paid apps).
+- ✅ You **must** credit the original creator: *Ali Benkarrouch*
+
+See: [Creative Commons BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
