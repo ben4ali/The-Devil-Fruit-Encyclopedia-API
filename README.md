@@ -175,7 +175,7 @@ I also created a client-side React application that interacts with this API to d
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Image License
+## Image License
 
 All artwork and images in this repository (e.g., pixel art, Devil Fruit icons) are licensed under the **CC BY-NC-ND 4.0 License** (Attribution-NonCommercial-NoDerivatives).
 
