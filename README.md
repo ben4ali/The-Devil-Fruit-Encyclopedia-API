@@ -160,7 +160,8 @@ Content-Type: application/json
 
 ### Seed the DB
 
-Use the `Seed.json` in postman to seed the db with the premade devil fruits.
+There's a file you can use to seed the databse with premade fruits.
+If you wanna make your own json file with your fruits you can follow the one in Seed.json
 
 ### Notes
 
