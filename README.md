@@ -73,60 +73,6 @@ GET /api/devilfruits
 ]
 ```
 
-### Create a New Devil Fruit
-
-**Request:**
-
-```bash
-POST /api/devilfruits
-Content-Type: application/json
-```
-
-**Body:**
-
-```json
-{
-    "originalName": "Mera Mera no Mi",
-    "romanizedName": "Mera Mera no Mi",
-    "englishName": "Flame Flame Fruit",
-    "meaning": "Flame",
-    "type": "LOGIA",
-    "debutChapter": "700",
-    "debutEpisode": "629",
-    "debutArc": "Dressrosa",
-    "currentHolder": "Sabo",
-    "pastHolders": ["Portgas D. Ace"],
-    "description": "Grants the user the ability to create, control, and transform into fire.",
-    "awakeningStatus": false,
-    "awakeningDescription": null,
-    "isCanon": true,
-    "imageUrl": "http://example.com/mera-mera.jpg"
-}
-```
-
-**Response:**
-
-```json
-{
-    "id": 2,
-    "originalName": "Mera Mera no Mi",
-    "romanizedName": "Mera Mera no Mi",
-    "englishName": "Flame Flame Fruit",
-    "meaning": "Flame",
-    "type": "LOGIA",
-    "debutChapter": "700",
-    "debutEpisode": "629",
-    "debutArc": "Dressrosa",
-    "currentHolder": "Sabo",
-    "pastHolders": ["Portgas D. Ace"],
-    "description": "Grants the user the ability to create, control, and transform into fire.",
-    "awakeningStatus": false,
-    "awakeningDescription": null,
-    "isCanon": true,
-    "imageUrl": "http://example.com/mera-mera.jpg"
-}
-```
-
 ## How to Run
 
 1. **Clone the Repository**  
@@ -182,10 +128,10 @@ All artwork and images in this repository (e.g., pixel art, Devil Fruit icons) a
 
 This means:
 
-- ✅ You **can** share and use the images **for personal or educational purposes**.
-- ❌ You **cannot** modify, remix, or transform the images.
-- ❌ You **cannot** use them for commercial purposes (e.g., sell them, use them in commercial games, merch, or paid apps).
-- ✅ You **must** credit the original creator: *Ali Benkarrouch*
+-  You **can** share and use the images **for personal or educational purposes**.
+-  You **cannot** modify, remix, or transform the images.
+-  You **cannot** use them for commercial purposes (e.g., sell them, use them in commercial games, merch, or paid apps).
+-  You **must** credit the original creator: *Ali Benkarrouch*
 
 See: [Creative Commons BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
